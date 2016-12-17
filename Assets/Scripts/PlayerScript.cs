@@ -44,8 +44,6 @@ public class PlayerScript : MonoBehaviour {
 	void moveHands(){
 		baseRightHand = GetComponent<Rigidbody2D> ().position + new Vector2(0.3f, 0.0f);
 
-
-
 		//transform.Find ("HandR").transform.position = baseRightHand + new Vector2( 2.0f*Mathf.Sin(Time.realtimeSinceStartup/1.0f), 0.0f );
 		//transform.Find ("HandR").position = baseRightHand + new Vector2( 0.4f*Mathf.Sin(Time.realtimeSinceStartup/1.0f), 0.0f );
 
