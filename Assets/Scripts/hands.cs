@@ -37,6 +37,7 @@ public class hands : MonoBehaviour {
 			//Destroy (other.gameObject);
 			//pickup the stealable, set the hand to holding so it doesn't grab more
 			other.gameObject.transform.parent = this.transform;
+			other.gameObject.transform.localPosition= new Vector3 (0.0f, 0.0f, 1.0f);
 			heldObject = other;
 			heldObject.GetComponent<stealable> ().stole = true;
 			holding = true;
