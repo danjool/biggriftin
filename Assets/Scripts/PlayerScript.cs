@@ -22,7 +22,8 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 	}
 
-	void FixedUpdate(){
+	void FixedUpdate()
+	{
 		float hInput = Input.GetAxis ("Horizontal");
 		float vInput = Input.GetAxis ("Vertical");
 
