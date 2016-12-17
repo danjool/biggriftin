@@ -22,8 +22,8 @@ GameObject:
   - 212: {fileID: 212000012028005648}
   - 50: {fileID: 50000010409237920}
   - 61: {fileID: 61000012788262658}
-  m_Layer: 0
-  m_Name: Square
+  m_Layer: 8
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
