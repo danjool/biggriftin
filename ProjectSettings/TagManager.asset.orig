@@ -15,9 +15,14 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
+  - Unpassable
+  - 
+=======
   - hands
   - stealables
-  - Unpassable
+>>>>>>> e4f196ed5620a61450cb39798c0abf31f4aed488
+  - 
   - 
   - 
   - 
