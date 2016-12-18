@@ -9,9 +9,11 @@ public class hands : MonoBehaviour {
 	public bool holding = false;
 	private Collider2D heldObject = null;
 	Text blankText;
+
+	//private LineRenderer arm;
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,14 @@ public class hands : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		
+		//update arm
+		//got nixed for visual reasoins
+
+
+		//hand
+		//GetComponent<LineRenderer>().SetPosition(1, this.GetComponent<Rigidbody2D>().transform.position + new Vector3(0.0f,0.0f,11.0f) );
+		//body
+		//GetComponent<LineRenderer>().SetPosition(0, GameObject.FindGameObjectWithTag("body").transform.position + new Vector3(0f,0.15f,11.0f) );
 	}
 
 	public void resetMass(){
