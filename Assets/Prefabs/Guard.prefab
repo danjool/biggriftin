@@ -50,7 +50,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013081537438}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -88,6 +88,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ae85b306ee19349a54a08a7e00157b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  force: 0
+  sightRange: 3
+  sightAngle: 45
+  patrolRoute:
+  - {x: 5, y: 4}
+  - {x: -4, y: 4}
+  - {x: -4, y: -2}
+  - {x: 3, y: 0}
+  pathToDestination: []
 --- !u!212 &212000011499764674
 SpriteRenderer:
   m_ObjectHideFlags: 1
