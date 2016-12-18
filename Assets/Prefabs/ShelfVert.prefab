@@ -22,6 +22,7 @@ GameObject:
   - 212: {fileID: 212000012028005648}
   - 50: {fileID: 50000010409237920}
   - 61: {fileID: 61000012788262658}
+  - 114: {fileID: 114000014173682920}
   m_Layer: 10
   m_Name: ShelfVert
   m_TagString: Untagged
@@ -77,6 +78,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114000014173682920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012330630778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af62d62bca878ee4f8812f0a472f2faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000012028005648
 SpriteRenderer:
   m_ObjectHideFlags: 1
