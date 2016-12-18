@@ -17,8 +17,20 @@ public class IndicatorScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector2 toDropoff = dropoff.transform.position - mainCamera.transform.position;
-		float posY = mainCamera.ScreenToWorldPoint(new Vector3(0, mainCamera.pixelHeight - 10, 0)).y;
-		float posX = toDropoff.x / toDropoff.y * posY;
-		transform.position = new Vector2 (posX, posY);
+		Vector2 position = (Vector2)mainCamera.transform.position + toDropoff.normalized * mainCamera.orthographicSize * 0.9f;
+		transform.up = toDropoff.normalized;
+		transform.position = position;
+
+		GameObject[] hands = GameObject.FindGameObjectsWithTag ("hands");
+		bool full = true;
+		for (int i = 0; i < hands.Length; i++)
+		{
+			if (!hands [i].GetComponent<hands> ().holding)
+			{
+				full = false;
+			}
+		}
+
+		gameObject.GetComponent<SpriteRenderer> ().enabled = full;
 	}
 }
