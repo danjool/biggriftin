@@ -23,10 +23,9 @@ GameObject:
   - 58: {fileID: 58000012592200606}
   - 50: {fileID: 50000010053405692}
   - 114: {fileID: 114000014083143114}
-  - 95: {fileID: 95000013615401978}
   m_Layer: 0
   m_Name: Guard
-  m_TagString: Untagged
+  m_TagString: guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,8 +40,9 @@ GameObject:
   - 4: {fileID: 4000010098148524}
   - 212: {fileID: 212000013708894120}
   - 114: {fileID: 114000013981194416}
+  - 95: {fileID: 95000014293618754}
   m_Layer: 0
-  m_Name: walking_down_1
+  m_Name: guardSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,9 +67,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013081537438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.29, y: 1.72, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.3999996, y: 2.54, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4000010098148524}
   m_Father: {fileID: 0}
@@ -108,14 +108,14 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!95 &95000013615401978
+  m_Radius: 0.2
+--- !u!95 &95000014293618754
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013081537438}
+  m_GameObject: {fileID: 1000013289477768}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 752f0ec56d8f6764aa72210438c5a3f5, type: 2}

@@ -11,6 +11,7 @@ TagManager:
   - door
   - massLabel
   - valueLabel
+  - guard
   layers:
   - Default
   - TransparentFX
