@@ -28,6 +28,7 @@ public class hands : MonoBehaviour {
 		Vector3 diff = bodyP - this.transform.position;
 		float rot =  Mathf.Atan2(diff.y, diff.x)*Mathf.Rad2Deg;
 		this.gameObject.transform.rotation = Quaternion.AngleAxis ( rot, Vector3.forward );
+		GameObject.FindGameObjectWithTag ("totalValue").GetComponent<Text>().text = "Total Value: " + ApplicationModel.totalValueStole.ToString() + " brabbples.";
 	}
 
 	void FixedUpdate(){
@@ -64,8 +65,8 @@ public class hands : MonoBehaviour {
 			//update the theme text to display the name of what we just grabbed
 			blankText.text = "All your " + heldObject.name + " are belong to us!";
 
-			GameObject.FindGameObjectWithTag ("massLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Mass.ToString() + " Brabbples";
-			GameObject.FindGameObjectWithTag ("valueLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Value.ToString();
+			GameObject.FindGameObjectWithTag ("massLabel").GetComponent<Text>().text = "Mass: " + heldObject.GetComponent<stealable>().Mass.ToString() + " masses.";
+			GameObject.FindGameObjectWithTag ("valueLabel").GetComponent<Text>().text = "Value: " + heldObject.GetComponent<stealable>().Value.ToString() + " brabbples.";
 
 
 		}
