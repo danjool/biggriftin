@@ -12,7 +12,7 @@ public class introScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.anyKey) {
+		if (Input.GetKey( KeyCode.Space ) ) {
 			SceneManager.LoadScene ("levelOne");
 		}
 	}

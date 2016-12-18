@@ -15,7 +15,7 @@ public class updateTotalScore : MonoBehaviour {
 	void Update () {
 		GameObject.FindGameObjectWithTag ("totalValue").GetComponent<Text> ().text = ApplicationModel.totalValueStole.ToString ();
 
-		if (Input.anyKey) {
+		if (Input.GetKey( KeyCode.Space )) {
 			SceneManager.LoadScene ("IntroScene");
 		}
 
