@@ -55,7 +55,7 @@ public class PlayerScript : MonoBehaviour {
 		moveHands ();
 
 		if (Time.timeSinceLevelLoad > 60) {
-			SceneManager.LoadScene ("EndScene");
+			SceneManager.LoadScene ("EndSceneGood");
 		}
 	}
 
