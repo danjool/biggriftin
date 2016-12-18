@@ -100,9 +100,10 @@ GameObject:
   - 224: {fileID: 991568412}
   - 222: {fileID: 991568414}
   - 114: {fileID: 991568413}
+  - 114: {fileID: 991568415}
   m_Layer: 5
   m_Name: bestValueText
-  m_TagString: Untagged
+  m_TagString: totalValue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +167,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 991568411}
+--- !u!114 &991568415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991568411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5722cb14f1952a9408f403fdb0fd5c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1068945066
 GameObject:
   m_ObjectHideFlags: 0

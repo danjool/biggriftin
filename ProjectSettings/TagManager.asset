@@ -12,6 +12,7 @@ TagManager:
   - massLabel
   - valueLabel
   - guard
+  - totalValue
   layers:
   - Default
   - TransparentFX

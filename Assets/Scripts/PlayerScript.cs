@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 	public float baseAccel = 100.0f;
@@ -52,10 +53,21 @@ public class PlayerScript : MonoBehaviour {
 		GetComponent<Rigidbody2D>().AddForce(input * accel * Time.deltaTime);
 
 		moveHands ();
+
+		if (Time.timeSinceLevelLoad > 60) {
+			SceneManager.LoadScene ("EndScene");
+		}
 	}
 
 	void moveHands(){
 		baseRightHand = GetComponent<Rigidbody2D> ().position + new Vector2(0.3f, 0.0f);
 
+	}
+
+	void OnTriggerEnter2D( Collider2D other ){
+		//figure out if the guard hit us
+		if (other.gameObject.tag == "guard") {
+			Application.LoadLevel ("EndScene");
+		}
 	}
 }

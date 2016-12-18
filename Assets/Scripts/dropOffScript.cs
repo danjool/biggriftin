@@ -27,7 +27,8 @@ public class dropOffScript : MonoBehaviour {
 			//attacht the stoled object to the dropoff
 			other.gameObject.transform.parent = this.transform;
 
-
+			//let the static total know:  
+			ApplicationModel.totalValueStole += other.gameObject.GetComponent<stealable>().Value;
 
 
 		}

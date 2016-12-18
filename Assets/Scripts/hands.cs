@@ -63,8 +63,7 @@ public class hands : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("massLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Mass.ToString() + " Brabbples";
 			GameObject.FindGameObjectWithTag ("valueLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Value.ToString();
 
-			//let the static total know:  
-			ApplicationModel.totalValueStole += heldObject.GetComponent<stealable>().Mass;
+
 		}
 
 		if (other.gameObject.tag == "body" && holding == true) {
