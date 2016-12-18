@@ -5,8 +5,11 @@ using System.IO;
 
 public class GuardScript : MonoBehaviour {
 
+	public AudioClip alertSound;
 	private GameObject player;
 	private Vector2 lastKnownLocation;
+
+	private AudioSource speaker;
 
 	public float speed, force, sightRange, sightAngle;
 
@@ -35,6 +38,8 @@ public class GuardScript : MonoBehaviour {
 		rb = gameObject.GetComponent<Rigidbody2D> ();
 
 		animator = GetComponentInChildren<Animator> ();
+
+		speaker = gameObject.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -81,6 +86,10 @@ public class GuardScript : MonoBehaviour {
 			}
 			else if (playerCast.collider.gameObject == player)
 			{
+				if (destination != lastKnownLocation)
+				{
+					speaker.PlayOneShot (alertSound);
+				}
 				Debug.DrawLine (transform.position, playerCast.point, Color.green, 0f, false);
 				lastKnownLocation = player.transform.position;
 				destination = lastKnownLocation;
