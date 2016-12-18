@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class doorSensor : MonoBehaviour {
 
+	public Sprite open,closed;
 	// Use this for initialization
 	void Start () {
 	
