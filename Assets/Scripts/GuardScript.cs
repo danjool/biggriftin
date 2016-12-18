@@ -10,7 +10,9 @@ public class GuardScript : MonoBehaviour {
 
 	public float speed, force, sightRange, sightAngle;
 
+	public GameObject bottomLeft, topRight;
 	public GameObject[] patrolRoute;
+
 	private int patrolIndex = 0;
 
 	private Rigidbody2D rb;
@@ -24,8 +26,8 @@ public class GuardScript : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("body");
 		destination = patrolRoute [patrolIndex].transform.position;
 		pathToDestination = BreadthFirstSearch.GetPath (
-			new Vector2 (-6f, -5f),
-			new Vector2 (6f, 6f),
+			new Vector2 (bottomLeft.transform.position.x, bottomLeft.transform.position.y),
+			new Vector2 (topRight.transform.position.x, topRight.transform.position.y),
 			transform.position,
 			destination);
 
@@ -43,8 +45,8 @@ public class GuardScript : MonoBehaviour {
 			Physics2D.Linecast (transform.position - 0.4f * transform.right, destination, LayerMask.GetMask ("Unpassable")))
 		{
 			pathToDestination = BreadthFirstSearch.GetPath (
-				new Vector2 (-6f, -5f),
-				new Vector2 (6f, 6f),
+				new Vector2 (bottomLeft.transform.position.x, bottomLeft.transform.position.y),
+				new Vector2 (topRight.transform.position.x, topRight.transform.position.y),
 				transform.position,
 				destination);
 		}
