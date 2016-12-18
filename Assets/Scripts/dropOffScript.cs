@@ -17,7 +17,8 @@ public class dropOffScript : MonoBehaviour {
 	void OnTriggerEnter2D( Collider2D other ){
 		
 		if (other.gameObject.tag == "stealable") {
-			
+			//we just dropped off a stealabe!
+
 			//make the hand that held that object open again
 			other.gameObject.GetComponentInParent<hands>().holding = false;
 			//set the mass of the hand back to that of its baseMass
@@ -25,6 +26,9 @@ public class dropOffScript : MonoBehaviour {
 
 			//attacht the stoled object to the dropoff
 			other.gameObject.transform.parent = this.transform;
+
+
+
 
 		}
 	}
