@@ -100,7 +100,7 @@ GameObject:
   - 50: {fileID: 50000011903804262}
   - 231: {fileID: 231000012964900686}
   - 95: {fileID: 95000011208998926}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: body
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013780952314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -2, z: 0}
+  m_LocalPosition: {x: 18.62, y: 10.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000010238836092}
@@ -340,7 +340,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.4
 --- !u!61 &61000011715605056
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -536,7 +536,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 889793607
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ef8f59b5d55467b44996afcfb74a4506, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -602,8 +602,8 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.1
-  m_DampingRatio: 0
+  m_Distance: 0.05
+  m_DampingRatio: 1
   m_Frequency: 1
 --- !u!231 &231000010497704118
 SpringJoint2D:
@@ -640,8 +640,8 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.1
-  m_DampingRatio: 0
+  m_Distance: 0.05
+  m_DampingRatio: 1
   m_Frequency: 1
 --- !u!231 &231000012899951698
 SpringJoint2D:
@@ -659,8 +659,8 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.1
-  m_DampingRatio: 0
+  m_Distance: 0.05
+  m_DampingRatio: 1
   m_Frequency: 1
 --- !u!231 &231000012964900686
 SpringJoint2D:
@@ -678,7 +678,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.1
+  m_Distance: 0.05
   m_DampingRatio: 1
   m_Frequency: 0.5
 --- !u!231 &231000013279175948
