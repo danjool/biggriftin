@@ -115,6 +115,11 @@ public class GuardScript : MonoBehaviour {
 		}
 
 		Debug.DrawLine (transform.position, destination, Color.white);
+
+		if (Vector3.Distance( transform.position, player.transform.position)  < 0.7f ) {
+			//got too close, catch the player
+			Application.LoadLevel ("EndScene");
+		}
 	}
 
 	void FixedUpdate()
