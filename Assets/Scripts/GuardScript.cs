@@ -10,7 +10,7 @@ public class GuardScript : MonoBehaviour {
 
 	public float speed, force, sightRange, sightAngle;
 
-	public Vector2[] patrolRoute;
+	public GameObject[] patrolRoute;
 	private int patrolIndex = 0;
 
 	private Rigidbody2D rb;
@@ -22,7 +22,7 @@ public class GuardScript : MonoBehaviour {
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag ("body");
-		destination = patrolRoute [patrolIndex];
+		destination = patrolRoute [patrolIndex].transform.position;
 		pathToDestination = BreadthFirstSearch.GetPath (
 			new Vector2 (-6f, -5f),
 			new Vector2 (6f, 6f),
@@ -71,7 +71,7 @@ public class GuardScript : MonoBehaviour {
 				if (((Vector2)transform.position - destination).sqrMagnitude < 0.25f)
 				{
 					patrolIndex = (patrolIndex + 1) % patrolRoute.Length;
-					destination = patrolRoute [patrolIndex];
+					destination = patrolRoute [patrolIndex].transform.position;
 				}
 			}
 			else if (playerCast.collider.gameObject == player)
@@ -87,7 +87,7 @@ public class GuardScript : MonoBehaviour {
 				if (((Vector2)transform.position - destination).sqrMagnitude < 0.25f)
 				{
 					patrolIndex = (patrolIndex + 1) % patrolRoute.Length;
-					destination = patrolRoute [patrolIndex];
+					destination = patrolRoute [patrolIndex].transform.position;
 				}
 			}
 		}
@@ -96,7 +96,7 @@ public class GuardScript : MonoBehaviour {
 			if (((Vector2)transform.position - destination).sqrMagnitude < 0.25f)
 			{
 				patrolIndex = (patrolIndex + 1) % patrolRoute.Length;
-				destination = patrolRoute [patrolIndex];
+				destination = patrolRoute [patrolIndex].transform.position;
 			}
 		}
 
