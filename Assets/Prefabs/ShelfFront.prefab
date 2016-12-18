@@ -23,7 +23,7 @@ GameObject:
   - 50: {fileID: 50000010409237920}
   - 61: {fileID: 61000012788262658}
   m_Layer: 10
-  m_Name: Wall
+  m_Name: ShelfFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
