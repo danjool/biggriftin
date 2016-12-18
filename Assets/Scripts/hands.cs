@@ -17,6 +17,7 @@ public class hands : MonoBehaviour {
 	void Start () {
 		ApplicationModel.totalValueStole = 0f;
 		speaker = gameObject.transform.parent.GetComponent<AudioSource> ();
+		blankText = GameObject.FindGameObjectWithTag ("blankLabel").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -61,8 +62,7 @@ public class hands : MonoBehaviour {
 			this.GetComponent<Rigidbody2D>().mass += heldObject.GetComponent<stealable> ().Mass;
 
 			//update the theme text to display the name of what we just grabbed
-			blankText = GameObject.FindGameObjectWithTag ("blankLabel").GetComponent<Text>();
-			blankText.text = heldObject.name;
+			blankText.text = "All your " + heldObject.name + " are belong to us!";
 
 			GameObject.FindGameObjectWithTag ("massLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Mass.ToString() + " Brabbples";
 			GameObject.FindGameObjectWithTag ("valueLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Value.ToString();
