@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482b48ceb756b954ea12061e55e99b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grab: {fileID: 0}
   baseMass: 0.05
   holding: 0
 --- !u!114 &114000012418001058
@@ -412,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482b48ceb756b954ea12061e55e99b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grab: {fileID: 0}
   baseMass: 0.05
   holding: 0
 --- !u!114 &114000013478037878
