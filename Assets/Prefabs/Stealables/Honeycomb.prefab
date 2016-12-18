@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stole: 0
   Mass: 3
+  Value: 1
 --- !u!212 &212000012735118834
 SpriteRenderer:
   m_ObjectHideFlags: 1

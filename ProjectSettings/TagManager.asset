@@ -9,6 +9,8 @@ TagManager:
   - body
   - blankLabel
   - door
+  - massLabel
+  - valueLabel
   layers:
   - Default
   - TransparentFX

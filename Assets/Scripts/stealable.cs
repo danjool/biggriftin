@@ -5,6 +5,7 @@ using UnityEngine;
 public class stealable : MonoBehaviour {
 	public bool stole;
 	public float Mass = 1.0f;
+	public float Value = 1.0f;
 	// Use this for initialization
 	void Start () {
 		stole = false;
@@ -17,10 +18,5 @@ public class stealable : MonoBehaviour {
 	}
 
 	void onCollisionEnter2D(Collider2D coll){
-		if (coll.gameObject.tag == "hands") {
-			//this.transform.parent = coll.transform.parent;
-			//GetComponent<Rigidbody2D>().parent = coll.transform.parent;
-
-		}
 	}
 }

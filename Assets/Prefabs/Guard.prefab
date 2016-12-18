@@ -152,11 +152,13 @@ MonoBehaviour:
   force: 10
   sightRange: 3
   sightAngle: 45
+  bottomLeft: {fileID: 0}
+  topRight: {fileID: 0}
   patrolRoute:
-  - {x: 5, y: 4}
-  - {x: -4, y: 4}
-  - {x: -4, y: -2}
-  - {x: 3, y: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pathToDestination: []
 --- !u!212 &212000011499764674
 SpriteRenderer:

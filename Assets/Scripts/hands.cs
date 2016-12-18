@@ -59,6 +59,9 @@ public class hands : MonoBehaviour {
 			//update the theme text to display the name of what we just grabbed
 			blankText = GameObject.FindGameObjectWithTag ("blankLabel").GetComponent<Text>();
 			blankText.text = heldObject.name;
+
+			GameObject.FindGameObjectWithTag ("massLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Mass.ToString() + " Brabbples";
+			GameObject.FindGameObjectWithTag ("valueLabel").GetComponent<Text>().text = heldObject.GetComponent<stealable>().Value.ToString();
 		}
 
 		if (other.gameObject.tag == "body" && holding == true) {

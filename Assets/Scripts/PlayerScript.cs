@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
 
 	private LayerMask stealablesLayer;
 	private Animator animator;
-	private string animDirection = "walkDown";
+	//private string animDirection = "walkDown";
 
 	// Use this for initialization
 	void Start () {
@@ -51,64 +51,11 @@ public class PlayerScript : MonoBehaviour {
 		float accel = baseAccel / GetComponent<Rigidbody2D> ().mass;
 		GetComponent<Rigidbody2D>().AddForce(input * accel * Time.deltaTime);
 
-		//figure out the largest cardinal dir of movement, and fire animation triggers if necessary
-		//Vector2 dir = GetComponent<Rigidbody2D>().velocity.normalized;
-		//float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
-		//momentum based animation, wrong way to do it
-		/*
-		if (Mathf.Abs (dir.y) > Mathf.Abs (dir.x)) {
-			animator.SetTrigger ("walkDown");
-		} else {
-			animator.SetTrigger ("walkLeft");
-		}
-		*/
-
 		moveHands ();
 	}
 
 	void moveHands(){
 		baseRightHand = GetComponent<Rigidbody2D> ().position + new Vector2(0.3f, 0.0f);
-
-		//transform.Find ("HandR").transform.position = baseRightHand + new Vector2( 2.0f*Mathf.Sin(Time.realtimeSinceStartup/1.0f), 0.0f );
-		//transform.Find ("HandR").position = baseRightHand + new Vector2( 0.4f*Mathf.Sin(Time.realtimeSinceStartup/1.0f), 0.0f );
-
-		/*
-		//find near shit:
-		Collider2D[] nearStealables = Physics2D.OverlapCircleAll( baseRightHand, reachDistance, stealablesLayer );
-
-		//find nearest grabbable
-		if (nearStealables.Length != 0) {
-			Collider2D nearest = nearStealables[0];
-			float nearestDistMag = 100.0f;
-			Vector2 nearestDir = new Vector2(1.0f, 1.0f);
-			Vector2 distVec;
-			foreach (Collider2D stealable in nearStealables) {
-				distVec = (Vector2)stealable.transform.position - ( (Vector2)GetComponent<Rigidbody2D> ().position );
-				float distMag = distVec.magnitude;
-				Vector2 distDir = distVec.normalized;
-				if (nearestDistMag > distMag) {
-					nearest = stealable;
-					nearestDir = distDir;
-				}
-			}
-
-			transform.Find ("HandR").position = baseRightHand + 2.0f*nearestDir;
-
-		} else {
-			transform.Find ("HandR").position = baseRightHand;
-		}
-
-
-		//if within range, reach for it
-		*/
-
-		/*
-		foreach(Collider2D collider in Physics2D.OverlapCircleAll(baseRightHand, reachDistance, stealablesLayer) ){
-			Vector2 forceDirection = (Vector2)baseRightHand - (Vector2)collider.transform.position;
-			collider.attachedRigidbody.AddForce (forceDirection.normalized * 10.0f * Time.fixedDeltaTime);
-
-		}
-		*/
 
 	}
 }
