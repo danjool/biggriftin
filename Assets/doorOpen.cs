@@ -21,11 +21,20 @@ public class doorOpen : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (!openDoor) {
-			this.gameObject.transform.position =  Vector3.Min ( initPos + dir*Time.deltaTime*(new Vector3( 0.001f,0f,0f) ), goalPos );
+		if (dir < 0) {
+			if (openDoor) {
+				this.gameObject.transform.position = Vector3.Min (initPos + dir * Time.deltaTime * (new Vector3 (0.000001f, 0f, 0f)), goalPos);
+			} else {
+				this.gameObject.transform.position = Vector3.Max (goalPos + dir * Time.deltaTime * (new Vector3 (-0.001f, 0f, 0f)), initPos);
+			}
 		} else {
-			this.gameObject.transform.position =  Vector3.Max ( goalPos + dir*Time.deltaTime*(new Vector3(-0.001f,0f,0f) ), initPos );
+			if (openDoor) {
+				this.gameObject.transform.position =  Vector3.Max ( initPos + Time.deltaTime*(new Vector3( 0.001f,0f,0f) ), goalPos );
+			} else {
+				this.gameObject.transform.position =  Vector3.Min ( goalPos + Time.deltaTime*(new Vector3(-0.001f,0f,0f) ), initPos );
+			}
 		}
+
 	}
 
 	public void openTheDoor( ){

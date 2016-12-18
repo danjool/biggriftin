@@ -17,11 +17,17 @@ public class doorSensor : MonoBehaviour {
 
 	void OnTriggerEnter2D( Collider2D other )
 	{
-		GameObject.FindGameObjectWithTag ("door").GetComponent<doorOpen> ().openTheDoor ();
+		//GameObject.FindGameObjectWithTag ("door").GetComponent<doorOpen> ().openTheDoor ();
+		foreach (GameObject door in GameObject.FindGameObjectsWithTag("door")) {
+			door.GetComponent<doorOpen> ().openTheDoor ();
+		}
 	}
 
 	void OnTriggerExit2D( Collider2D other )
 	{
-		GameObject.FindGameObjectWithTag ("door").GetComponent<doorOpen> ().closeTheDoor ();
+		//GameObject.FindGameObjectWithTag ("door").GetComponent<doorOpen> ().closeTheDoor ();
+		foreach (GameObject door in GameObject.FindGameObjectsWithTag("door")) {
+			door.GetComponent<doorOpen> ().closeTheDoor ();
+		}
 	}
 }
