@@ -16,6 +16,7 @@ public class GuardScript : MonoBehaviour {
 	private int patrolIndex = 0;
 
 	private Rigidbody2D rb;
+	private Animator animator;
 
 	private Vector2 destination;
 	[SerializeField]
@@ -32,6 +33,8 @@ public class GuardScript : MonoBehaviour {
 			destination);
 
 		rb = gameObject.GetComponent<Rigidbody2D> ();
+
+		animator = GetComponentInChildren<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -114,6 +117,15 @@ public class GuardScript : MonoBehaviour {
 			rb.AddForce (transform.right * force);
 		}
 		rb.velocity = rb.velocity - (Vector2)transform.up * Vector2.Dot (transform.up, rb.velocity);
+
+		//determine which animations play based on the walkDirection:
+		float angle = Mathf.Atan2 ( walkDirection.y, walkDirection.x) * Mathf.Rad2Deg;
+
+
+		if ( Mathf.Abs( 0.0f - angle ) < 45.0f ) animator.SetTrigger ("guardWalkRight");
+		if ( Mathf.Abs( 90.0f - angle ) < 45.0f ) animator.SetTrigger ("guardWalkUp");
+		if ( Mathf.Abs( 180.0f - Mathf.Abs(angle) ) < 45.0f ) animator.SetTrigger ("guardWalkLeft");
+		if ( Mathf.Abs( -90.0f - angle ) < 45.0f ) animator.SetTrigger ("guardWalkDown");
 	}
 
 	private void DrawPath(Vector2[] path)
