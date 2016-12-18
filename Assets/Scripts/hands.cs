@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class hands : MonoBehaviour {
 
+	public AudioClip grab;
+	private AudioSource speaker;
 	public float baseMass = 0.05f;
 	public bool holding = false;
 	private Collider2D heldObject = null;
@@ -14,6 +16,7 @@ public class hands : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ApplicationModel.totalValueStole = 0f;
+		speaker = gameObject.transform.parent.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -53,6 +56,7 @@ public class hands : MonoBehaviour {
 			heldObject.GetComponent<stealable> ().stole = true;
 			holding = true;
 
+			speaker.PlayOneShot (grab);
 			//up the mass of the hand by the mass of the stole object
 			this.GetComponent<Rigidbody2D>().mass += heldObject.GetComponent<stealable> ().Mass;
 

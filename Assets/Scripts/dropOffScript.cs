@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class dropOffScript : MonoBehaviour {
 
+	public AudioClip ching;
+	private AudioSource speaker;
 	// Use this for initialization
 	void Start () {
-	
+		speaker = gameObject.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +32,7 @@ public class dropOffScript : MonoBehaviour {
 			//let the static total know:  
 			ApplicationModel.totalValueStole += other.gameObject.GetComponent<stealable>().Value;
 
-
+			speaker.PlayOneShot (ching);
 		}
 	}
 }
