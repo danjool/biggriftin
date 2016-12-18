@@ -7,15 +7,19 @@ public class PlayerScript : MonoBehaviour {
 	public float baseMass = 1.0f;
 	public float baseFriction = 1.0f;
 	public float reachDistance = 1.0f;
+	public float angle = 0.0f;
 
 	public Vector2 baseRightHand = new Vector2(1.7f, 0.0f);
 
 	private LayerMask stealablesLayer;
+	private Animator animator;
+	private string animDirection = "walkDown";
 
 	// Use this for initialization
 	void Start () {
 		GetComponent<Rigidbody2D> ().mass = baseMass;
 		stealablesLayer =  LayerMask.NameToLayer("stealables");
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -26,6 +30,14 @@ public class PlayerScript : MonoBehaviour {
 	{
 		float hInput = Input.GetAxis ("Horizontal");
 		float vInput = Input.GetAxis ("Vertical");
+
+		angle = Mathf.Atan2 ( vInput, hInput ) * Mathf.Rad2Deg;
+
+
+		if ( Mathf.Abs( 0.0f - angle ) < 45.0f ) animator.SetTrigger ("walkRight");
+		if ( Mathf.Abs( 90.0f - angle ) < 45.0f ) animator.SetTrigger ("walkUp");
+		if ( Mathf.Abs( 180.0f - Mathf.Abs(angle) ) < 45.0f ) animator.SetTrigger ("walkLeft");
+		if ( Mathf.Abs( -90.0f - angle ) < 45.0f ) animator.SetTrigger ("walkDown");
 
 		//friction
 		Vector2 vel = GetComponent<Rigidbody2D> ().velocity;
@@ -38,6 +50,18 @@ public class PlayerScript : MonoBehaviour {
 		Vector2 input = new Vector2( hInput, vInput );
 		float accel = baseAccel / GetComponent<Rigidbody2D> ().mass;
 		GetComponent<Rigidbody2D>().AddForce(input * accel * Time.deltaTime);
+
+		//figure out the largest cardinal dir of movement, and fire animation triggers if necessary
+		//Vector2 dir = GetComponent<Rigidbody2D>().velocity.normalized;
+		//float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
+		//momentum based animation, wrong way to do it
+		/*
+		if (Mathf.Abs (dir.y) > Mathf.Abs (dir.x)) {
+			animator.SetTrigger ("walkDown");
+		} else {
+			animator.SetTrigger ("walkLeft");
+		}
+		*/
 
 		moveHands ();
 	}
