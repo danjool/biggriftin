@@ -86,6 +86,7 @@ public static class BreadthFirstSearch
 		SearchMap map = new SearchMap (new GridPosition(bottomLeft), new GridPosition(topRight));
 		map.SetSearched (startGrid);
 		Vector2[] gridPath = Search (nodeQueue, goalGrid, map);
+		/*
 		Vector2[] fullPath = new Vector2[gridPath.Length + 2];
 		fullPath [0] = start;
 		fullPath [fullPath.Length - 1] = goal;
@@ -93,7 +94,10 @@ public static class BreadthFirstSearch
 		{
 			fullPath [i + 1] = gridPath [i];
 		}
-		return fullPath;
+		*/
+		gridPath [0] = start;
+		gridPath [gridPath.Length - 1] = goal;
+		return gridPath;
 	}
 
 	private static Vector2[] Search(Queue<SearchNode> nodeQueue, GridPosition goal, SearchMap searchMap)
