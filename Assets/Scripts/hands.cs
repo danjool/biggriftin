@@ -29,12 +29,14 @@ public class hands : MonoBehaviour {
 	}
 
 	public void resetMass(){
+		//for when we drop off the loot, make the hands light again
+		//the mass change for picking stuff up is fudged so the loot isn't rigidbody
 		this.GetComponent<Rigidbody2D> ().mass = 0.05f;
 	}	
 
 	void OnTriggerEnter2D( Collider2D other ){
 		if (other.gameObject.tag == "stealable" && holding == false && other.GetComponent<stealable>().stole ==false ) {
-			//Destroy (other.gameObject);
+			
 			//pickup the stealable, set the hand to holding so it doesn't grab more
 			other.gameObject.transform.parent = this.transform;
 			other.gameObject.transform.localPosition= new Vector3 (0.0f, 0.0f, 1.0f);
@@ -45,6 +47,7 @@ public class hands : MonoBehaviour {
 			//up the mass of the hand by the mass of the stole object
 			this.GetComponent<Rigidbody2D>().mass += heldObject.GetComponent<stealable> ().Mass;
 
+			//update the theme text to display the name of what we just grabbed
 			blankText = GameObject.FindGameObjectWithTag ("blankLabel").GetComponent<Text>();
 			blankText.text = heldObject.name;
 		}

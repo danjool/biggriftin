@@ -23,7 +23,7 @@ GameObject:
   - 61: {fileID: 61000010585548628}
   - 114: {fileID: 114000010188563796}
   m_Layer: 9
-  m_Name: Diamond 1
+  m_Name: Diamond
   m_TagString: stealable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d571aef17fa704397d836dd28b1c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stole: 0
+  Mass: 0.1
 --- !u!212 &212000012867689654
 SpriteRenderer:
   m_ObjectHideFlags: 1
